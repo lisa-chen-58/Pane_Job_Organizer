@@ -1,0 +1,61 @@
+@charset "ISO-8859-1";
+
+/* 
+
+REMINDERS:
+# is for id
+. is for class
+
+EXAMPLE
+h1{
+	color: red; 
+}
+
+*/
+
+
+/*
+.---.--.--.   ..---..--.      .   ..---.    .    .--. --.--.   . .--.
+|      |   \ / |    |   :     |   ||       / \   |   :  |  |\  |:    
+|---   |    /  |--- |   |     |---||---   /___\  |   |  |  | \ || --.
+|      |   / \ |    |   ;     |   ||     /     \ |   ;  |  |  \|:   |
+'    --'--'   ''---''--'      '   ''---''       `'--' --'--'   ' `--'
+w3 schools guidance: https://www.w3schools.com/howto/howto_js_sticky_header.asp
+*/
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+
+/* .--.     .     .--..   . .--..--.  .--. .   ..   ..--. 
+|   )   / \   :    |  / :    |   ):    :|   ||\  ||   :
+|--:   /___\  |    |-'  | --.|--' |    ||   || \ ||   |
+|   ) /     \ :    |  \ :   ||  \ :    ;:   ;|  \||   ;
+'--' '       ` `--''   ` `--''   ` `--'  `-' '   ''--'  
+https://1stwebdesigner.com/15-css-background-effects/
+*/
+
+

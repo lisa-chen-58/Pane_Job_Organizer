@@ -21,8 +21,13 @@
 
 <!-- for Bootstrap CSS -->
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+<!-- for Boostrap CSS specifically for the table -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
+
 <!-- YOUR own local CSS -->
 <link rel="stylesheet" href="../views/main.css"/>
+
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script type="text/javascript" src="js/app.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
@@ -57,44 +62,51 @@
 	</div>
 	<h1 class="text-center content">Insert Card thing</h1>	
 	<hr>
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Company</th>
-				<th>Contact Information</th>
-				<th>Date Applied</th>
-				<th>Next Follow-Up</th>
-				<th>Stage of Interview</th>
-				<th>Job Title</th>
-				<th>Area of Expertise</th>
-				<th>Salary</th>
-				<th>Location</th>
-				<th>Salary</th>
-				<th>Location</th>
-				<th>Job Description</th>
-			</tr>	
-		</thead>
-		<tbody>
-			<!-- MAP THIS -->
-			<c:forEach var="job" items="${allJobs}">
-				<tr>
-					<td>${job.company}</td>
-					<td>${job.contactInformation}</td>
-					<td>${job.dateApplied}</td>
-					<td>${job.nextFollowUp}</td>
-					<td>${job.stageOfInterview}</td>
-					<td>${jobTitle}</td>
-					<td>${job.areaOfExpertise}</td>
-					<td>${job.salary}</td>
-					<td>${job.location}</td>
-					<td>${job.jobDescription }</td>
-					<td>${notableBenefits}</td>
-					<td>${additionalNotes}</td>
-					<td>${excitementLevel}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+	<div class="container">
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Stage of Interview</th>
+						<th>Next Follow Up</th>
+						<th>Job Title</th>
+						<th>Company</th>
+						<th>Area of Expertise</th>
+						<th>Salary</th>
+						<th>Date Applied</th>
+						<th>Excitement Level</th>
+						<th>Location</th>
+						<th>Contact Information</th>
+						<th>Job Description</th>
+						<th>Notable Benefits</th>
+						<th>Additional Notes</th>
+					
+					</tr>	
+				</thead>
+				<tbody>
+					<!-- MAP THIS -->
+					<c:forEach var="job" items="${allJobs}">
+						<tr>
+							<td>${job.stageOfInterview}</td>
+							<td>${job.nextFollowUp}</td>
+							<td>${jobTitle}</td>
+							<td>${job.company}</td>
+							<td>${job.areaOfExpertise}</td>
+							<td>${job.salary}</td>
+							<td>${job.dateApplied}</td>
+							<td>${job.excitementLevel}</td>
+							<td>${job.location}</td>
+							<td>${job.contactInformation}</td>
+							<td>${job.jobDescription }</td>
+							<td>${notableBenefits}</td>
+							<td>${additionalNotes}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+	
+	</div>
+
 	
 	<!-- Script for cool header! -->
 	<script>

@@ -79,7 +79,7 @@
 						<form:label path="contactInformation">Contact Information:</form:label>
 						<form:errors class="text-danger" path="contactInformation"/>
 					    <br>
-					    <form:textarea path = "contactInformation" rows = "5" cols = "30" />
+					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
 					</div>
 					<div class="form-group card-body">
 						<form:label path="dateApplied">Date Applied:</form:label>
@@ -133,19 +133,19 @@
 						<form:label path="jobDescription">Job Description:</form:label>
 						<form:errors class="text-danger" path="jobDescription"/>
 						<br>
-					    <form:textarea path = "jobDescription" rows = "5" cols = "30" />
+					    <form:textarea class="form-control" path = "jobDescription" rows = "5" cols = "30" />
 					</div>
 					<div class="form-group card-body">
 						<form:label path="notableBenefits">Notable Benefits:</form:label>
 						<form:errors class="text-danger" path="notableBenefits"/>
 						<br>
-					    <form:textarea path = "contactInformation" rows = "5" cols = "30" />
+					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
 					</div>
 					<div class="form-group card-body">
 						<form:label path="additionalNotes">Additional Notes:</form:label>
 						<form:errors class="text-danger" path="additionalNotes"/>
 						<br>
-					    <form:textarea path = "contactInformation" rows = "5" cols = "30" />
+					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
 					</div>
 					<input class="form-group btn btn-warning" type="submit" value="Submit"/>
 

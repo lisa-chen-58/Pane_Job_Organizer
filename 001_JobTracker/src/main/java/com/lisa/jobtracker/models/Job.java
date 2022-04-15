@@ -35,7 +35,7 @@ public class Job {
 	
 	@NotEmpty(message="Company is required!")
 	@Size(min=1, max=50, message="Company must be between 1 and 50 characters")
-	private String Company;
+	private String company;
 	
 	@NotEmpty(message="Contact Information is required!")
 	@Size(min=1, max=255, message="Contact Information must be between 1 and 255 characters")
@@ -120,10 +120,10 @@ public class Job {
 		this.id = id;
 	}
 	public String getCompany() {
-		return Company;
+		return company;
 	}
 	public void setCompany(String company) {
-		Company = company;
+		this.company = company;
 	}
 	public String getContactInformation() {
 		return contactInformation;

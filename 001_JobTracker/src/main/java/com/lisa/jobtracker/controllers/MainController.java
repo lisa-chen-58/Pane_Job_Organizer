@@ -140,7 +140,7 @@ public class MainController {
 	
 	///////////// FORM /////////////
 	@GetMapping("/pane/addjob")
-	public String jobForm(@ModelAttribute("addJob") Job job, HttpSession session, Model model) {
+	public String itemForm(@ModelAttribute("addJob") Job job, HttpSession session, Model model) {
 	  if(session.getAttribute("user_id") == null) {
 	  	return "redirect:/";
 	  }
@@ -152,13 +152,11 @@ public class MainController {
 	
 	/////////// SUBMIT FORM /////////////	
 	@PostMapping("/pane/create")
-	public String createJob(@Valid @ModelAttribute("addJob") Job newJob, BindingResult result, HttpSession session) {
+	public String createItem(@Valid @ModelAttribute("addJob") Job newJob, BindingResult result, HttpSession session) {
 	
 	  if(result.hasErrors()) {
 	      return "addJob.jsp";
 	  }
-//	  Long userId = (Long) session.getAttribute("user_id");
-//	  newJob.setModifier(userService.findUserById(userId));
 	
 	  jobService.createJob(newJob);
 	  return "redirect:/pane/dashboard";

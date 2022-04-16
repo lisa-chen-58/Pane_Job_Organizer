@@ -89,7 +89,7 @@
 						<tr>
 							<td>${job.stageOfInterview}</td>
 							<td>${job.nextFollowUp}</td>
-							<td>${jobTitle}</td>
+							<td>${job.jobTitle}</td>
 							<td>${job.company}</td>
 							<td>${job.areaOfExpertise}</td>
 							<td>${job.salary}</td>
@@ -98,8 +98,8 @@
 							<td>${job.location}</td>
 							<td>${job.contactInformation}</td>
 							<td>${job.jobDescription }</td>
-							<td>${notableBenefits}</td>
-							<td>${additionalNotes}</td>
+							<td>${job.notableBenefits}</td>
+							<td>${job.additionalNotes}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -62,34 +62,6 @@
   					<form:input type="hidden" value="${userLogin.id}" path="user"/>    
 					
 					<div class="form-group card-body">
-						<form:label path="stageOfInterview">Stage of Interview:</form:label>
-						<form:errors class="text-danger" path="stageOfInterview"/>
-						<form:input class="form-control" path="stageOfInterview"/>
-					</div>
-					<div class="form-group card-body">
-						<form:label path="nextFollowUp">Next Follow Up:</form:label>
-						<form:errors class="text-danger" path="nextFollowUp"/>
-						<form:input type="date" class="form-control" path="nextFollowUp"/>
-					</div>
-					<div class="form-group card-body">
-						<form:label path="jobTitle">Job Title:</form:label>
-						<form:errors class="text-danger" path="jobTitle"/>
-						<form:input class="form-control" path="jobTitle"/>
-					</div>
-					<div class="form-group card-body">
-						<form:label path="company">Company:</form:label>
-						<form:errors class="text-danger" path="company"/>
-						<form:input class="form-control" path="company"/>
-					</div>
-					<div class="form-group card-body">
-						<form:label path="areaOfExpertise">Area of Expertise:</form:label>
-						<form:errors class="text-danger" path="areaOfExpertise"/>
-						<form:input class="form-control" path="areaOfExpertise"/>
-					</div>
-					
-					
-					
-					<div class="form-group card-body">
 						<form:label path="excitementLevel">
 							Excitement Level 
 							<br>
@@ -98,25 +70,45 @@
 						<form:errors class="text-danger" path="excitementLevel"/>
 						<form:input class="form-control" path="excitementLevel"/>
 					</div>
-
+					<div class="form-group card-body">
+						<form:label path="company">Company:</form:label>
+						<form:errors class="text-danger" path="company"/>
+						<form:input class="form-control" path="company"/>
+					</div>
 					<div class="form-group card-body">
 						<form:label path="contactInformation">Contact Information:</form:label>
 						<form:errors class="text-danger" path="contactInformation"/>
 					    <br>
-					    <form:textarea class="form-control" path = "contactInformation"/>
+					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
 					</div>
 					<div class="form-group card-body">
 						<form:label path="dateApplied">Date Applied:</form:label>
 						<form:errors class="text-danger" path="dateApplied"/>
 						<form:input type="date" class="form-control" path="dateApplied"/>
 					</div>
-
-
+					<div class="form-group card-body">
+						<form:label path="nextFollowUp">Next Follow Up:</form:label>
+						<form:errors class="text-danger" path="nextFollowUp"/>
+						<form:input type="date" class="form-control" path="nextFollowUp"/>
+					</div>
+					<div class="form-group card-body">
+						<form:label path="stageOfInterview">Stage of Interview:</form:label>
+						<form:errors class="text-danger" path="stageOfInterview"/>
+						<form:input class="form-control" path="stageOfInterview"/>
+					</div>
+					<div class="form-group card-body">
+						<form:label path="jobTitle">Job Title:</form:label>
+						<form:errors class="text-danger" path="jobTitle"/>
+						<form:input class="form-control" path="jobTitle"/>
+					</div>
+					<div class="form-group card-body">
+						<form:label path="areaOfExpertise">Area of Expertise:</form:label>
+						<form:errors class="text-danger" path="areaOfExpertise"/>
+						<form:input class="form-control" path="areaOfExpertise"/>
+					</div>
 				</div>
 				<div>
 					<br>
-
-
 					<div class="form-group card-body">
 						<form:label path="salary">Salary:</form:label>
 						<form:errors class="text-danger" path="salary"/>
@@ -141,19 +133,19 @@
 						<form:label path="jobDescription">Job Description:</form:label>
 						<form:errors class="text-danger" path="jobDescription"/>
 						<br>
-					    <form:textarea class="form-control" path = "jobDescription"/>
+					    <form:textarea class="form-control" path = "jobDescription" rows = "5" cols = "30" />
 					</div>
 					<div class="form-group card-body">
 						<form:label path="notableBenefits">Notable Benefits:</form:label>
 						<form:errors class="text-danger" path="notableBenefits"/>
 						<br>
-					    <form:textarea class="form-control" path = "contactInformation"/>
+					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
 					</div>
 					<div class="form-group card-body">
 						<form:label path="additionalNotes">Additional Notes:</form:label>
 						<form:errors class="text-danger" path="additionalNotes"/>
 						<br>
-					    <form:textarea class="form-control" path = "contactInformation"/>
+					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
 					</div>
 					<input class="form-group btn btn-warning" type="submit" value="Submit"/>
 

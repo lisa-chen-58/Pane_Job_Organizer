@@ -131,7 +131,7 @@ public class MainController {
     	model.addAttribute("allJobs", jobService.allJobs());	
     	return "dashboard.jsp";
     	}
-
+    
 //    .--..--. .---.    .    .---..---.
 //    :    |   )|       / \     |  |    
 //    |    |--' |---   /___\    |  |--- 
@@ -162,8 +162,6 @@ public class MainController {
 	  return "redirect:/pane/dashboard";
 	}
 	
-
-
 //
 // 	.-. .   . .--. .  .   .  .      .--. .   ..---.
 // (   )|   |:    : \  \ /  /      :    :|\  ||    
@@ -203,7 +201,7 @@ public class MainController {
 	  User userLogin = userService.findUserById(userId);
 	  model.addAttribute("userLogin", userLogin);
 	  model.addAttribute("editJob", jobService.findJobById(id)); 	  
-	  return "editItem.jsp";
+	  return "editJob.jsp";
 	}
 	
 	@PostMapping("/pane/edit/{id}")
@@ -212,7 +210,7 @@ public class MainController {
 		  	return "redirect:/";
 		  }
 	  if(result.hasErrors()) {	
-	      return "editItem.jsp";
+	      return "editJob.jsp";
 	  }
 		jobService.updateJob(editJob);
 		return "redirect:/pane/dashboard";
@@ -227,7 +225,7 @@ public class MainController {
 //'--' '---''---''---'  '  '---'      `--' '   ''---'
 //
 
-	@GetMapping("/delete/job/{id}")
+	@GetMapping("/pane/delete/{id}")
 	public String deleteJob(@PathVariable("id") Long id) {
 		
 		// Uses the AutoWired Session

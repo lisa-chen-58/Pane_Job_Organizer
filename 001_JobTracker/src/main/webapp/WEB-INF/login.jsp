@@ -35,7 +35,7 @@
 	<div class="top-container header text-center" id="myHeader">
 		<h1>Pane</h1>
 		<hr>
-		<h5>A job search can be like viewing into the pane of a window... or a pain</h5>
+		<h5>A job search can be the window to a new opportunity... or a pain</h5>
 	</div>
 	<div class="yt-5 pt-5">
 		<div class="content d-flex text-center justify-content-center">
@@ -74,7 +74,7 @@
 						<form:errors class="text-danger" path="confirm"/>
 						<form:input type="password" class="form-control" path="confirm"/>
 					</div>
-					<input class="btn btn-warning" type="submit" value="Submit"/>
+					<input type="submit" value="Submit"/>
 				
 				</form:form>
 			</div>
@@ -92,7 +92,7 @@
 						<form:errors class="text-danger" path="password"/>
 						<form:input type="password" class="form-control" path="password"/>
 					</div>
-					<input class="btn btn-primary" type="submit" value="Submit"/>
+					<input type="submit" value="Submit"/>
 				
 				</form:form>
 			</div>

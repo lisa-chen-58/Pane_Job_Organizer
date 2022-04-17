@@ -33,22 +33,6 @@
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Script for cool header! -->
-<script>
-	window.onscroll = function() {myFunction()};
-	
-	var header = document.getElementById("myHeader");
-	var sticky = header.offsetTop;
-	
-	function myFunction() {
-	  if (window.pageYOffset > sticky) {
-	    header.classList.add("sticky");
-	  } else {
-	    header.classList.remove("sticky");
-	  }
-	}
-</script>
-
 
 </head>
 <body>
@@ -56,6 +40,7 @@
 		<h1>Pane</h1>
 		<h5>Dashboard for ${userLogin.firstName}</h5>
 		<p>
+			<a href="/pane/welcome">Welcome Page</a> |  
 			<a href="/pane/addjob">Add Job Opportunity</a> |  
 			<a href="/">Sign Out</a>
 		</p>
@@ -67,6 +52,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
+						<th>Adjustments</th>
 						<th>Stage of Interview</th>
 						<th>Next Follow Up</th>
 						<th>Job Title</th>
@@ -84,22 +70,32 @@
 					</tr>	
 				</thead>
 				<tbody>
-					<!-- MAP THIS -->
+					<!-- MAP THROUGH ALL ITERATIONS OF USERS' SAVED JOB PANES-->
 					<c:forEach var="job" items="${allJobs}">
 						<tr>
-							<td>${job.stageOfInterview}</td>
-							<td>${job.nextFollowUp}</td>
-							<td>${job.jobTitle}</td>
-							<td>${job.company}</td>
-							<td>${job.areaOfExpertise}</td>
-							<td>${job.salary}</td>
-							<td>${job.dateApplied}</td>
-							<td>${job.excitementLevel}</td>
-							<td>${job.location}</td>
-							<td>${job.contactInformation}</td>
-							<td>${job.jobDescription }</td>
-							<td>${job.notableBenefits}</td>
-							<td>${job.additionalNotes}</td>
+							<c:if test="${job.user.id==userLogin.id}">			
+								<td>
+									<a href="/pane/edit/${job.id}">Edit</a>
+									<a href="/pane/delete/${job.id}">Delete</a>
+								</td>
+								<td>${job.stageOfInterview}</td>
+								<td>${job.nextFollowUp}</td>
+								<td>
+									<a href="/pane/detail/${job.id}">
+										${job.jobTitle}
+									</a>
+								</td>
+								<td>${job.company}</td>
+								<td>${job.areaOfExpertise}</td>
+								<td>${job.salary}</td>
+								<td>${job.dateApplied}</td>
+								<td>${job.excitementLevel}</td>
+								<td>${job.location}</td>
+								<td>${job.contactInformation}</td>
+								<td>${job.jobDescription }</td>
+								<td>${job.notableBenefits}</td>
+								<td>${job.additionalNotes}</td>
+							</c:if>
 						</tr>
 					</c:forEach>
 				</tbody>

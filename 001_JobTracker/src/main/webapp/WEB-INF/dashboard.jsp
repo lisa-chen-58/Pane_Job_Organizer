@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
 
 <!-- YOUR own local CSS -->
-<link rel="stylesheet" href="../views/main.css"/>
+<link rel="stylesheet" href="../views/css/main.css"/>
 
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script type="text/javascript" src="js/app.js"></script>

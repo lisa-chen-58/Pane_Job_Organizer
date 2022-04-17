@@ -22,7 +22,7 @@
 <!-- for Bootstrap CSS -->
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <!-- YOUR own local CSS -->
-<link rel="stylesheet" href="../views/main.css"/>
+<link rel="stylesheet" href="../views/css/main.css"/>
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script type="text/javascript" src="js/app.js"></script>
 <script src="/webjars/jquery/jquery.min.js"></script>
@@ -56,101 +56,105 @@
 			</p>
 		</div>
 		<div class="p-4 mx-5 content">
-			<form:form class="d-flex justify-content-center text-center" action="/pane/create" method="post" modelAttribute="addJob">
-				<div>	
+			<form:form action="/pane/create" method="post" modelAttribute="addJob">
+				<div class="d-flex justify-content-center">
 				     <!-- userId -->
   					<form:input type="hidden" value="${userLogin.id}" path="user"/>    
-					
-					<div class="form-group card-body">
-						<form:label path="excitementLevel">
-							Excitement Level 
-							<br>
-							(must be between 1 and 10):
-							</form:label>
-						<form:errors class="text-danger" path="excitementLevel"/>
-						<form:input class="form-control" path="excitementLevel"/>
-					</div>
-					<div class="form-group card-body">
-						<form:label path="company">Company:</form:label>
-						<form:errors class="text-danger" path="company"/>
-						<form:input class="form-control" path="company"/>
-					</div>
-					<div class="form-group card-body">
-						<form:label path="contactInformation">Contact Information:</form:label>
-						<form:errors class="text-danger" path="contactInformation"/>
-					    <br>
-					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
-					</div>
-					<div class="form-group card-body">
-						<form:label path="dateApplied">Date Applied:</form:label>
-						<form:errors class="text-danger" path="dateApplied"/>
-						<form:input type="date" class="form-control" path="dateApplied"/>
-					</div>
-					<div class="form-group card-body">
-						<form:label path="nextFollowUp">Next Follow Up:</form:label>
-						<form:errors class="text-danger" path="nextFollowUp"/>
-						<form:input type="date" class="form-control" path="nextFollowUp"/>
-					</div>
-					<div class="form-group card-body">
+					<div class="form-sizing-double form-group card-body">
 						<form:label path="stageOfInterview">Stage of Interview:</form:label>
 						<form:errors class="text-danger" path="stageOfInterview"/>
 						<form:input class="form-control" path="stageOfInterview"/>
 					</div>
-					<div class="form-group card-body">
+					<div class="form-sizing-double form-group card-body">
+						<form:label path="nextFollowUp">Next Follow Up:</form:label>
+						<form:errors class="text-danger" path="nextFollowUp"/>
+						<form:input type="date" class="form-control" path="nextFollowUp"/>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center">
+					<div class="form-sizing-double form-group card-body">
 						<form:label path="jobTitle">Job Title:</form:label>
 						<form:errors class="text-danger" path="jobTitle"/>
 						<form:input class="form-control" path="jobTitle"/>
 					</div>
-					<div class="form-group card-body">
+					<div class="form-sizing-double form-group card-body">
+						<form:label path="company">Company:</form:label>
+						<form:errors class="text-danger" path="company"/>
+						<form:input class="form-control" path="company"/>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center">
+					<div class="form-sizing-double form-group card-body">
 						<form:label path="areaOfExpertise">Area of Expertise:</form:label>
 						<form:errors class="text-danger" path="areaOfExpertise"/>
 						<form:input class="form-control" path="areaOfExpertise"/>
 					</div>
-				</div>
-				<div>
-					<br>
-					<div class="form-group card-body">
+					<div class="form-sizing-double form-group card-body">
 						<form:label path="salary">Salary:</form:label>
 						<form:errors class="text-danger" path="salary"/>
 						<form:input type="float" class="form-control" path="salary"/>
 					</div>
-
-					<div class="form-group card-body">					
+				</div>
+				<div class="d-flex justify-content-center">
+					<div class="form-sizing-double form-group card-body">
+						<form:label path="dateApplied">Date Applied:</form:label>
+						<form:errors class="text-danger" path="dateApplied"/>
+						<form:input type="date" class="form-control" path="dateApplied"/>
+					</div>	
+					<div class="form-sizing-double form-group card-body">			
+						<form:label path="excitementLevel">Excitement Level:</form:label>
+						<form:errors class="text-danger" path="location"/>			
+						<form:select class="form-control" path="excitementLevel" name="excitementLevel">
+							<option value="0 - No Opinion">0 - No Opinion</option>
+							<option value="1 - Not Excited">1 - Not Excited</option>
+							<option value="2 - Leaning toward no">2 - Leaning toward no</option>
+							<option value="3 - Leaning toward yes">3 - Leaning toward yes</option>
+							<option value="4 - Really excited!">4 - Really excited!</option>
+							<option value="Other: See Additional Notes">Other: See Additional Notes</option>
+						</form:select>
+					</div>
+					<div class="form-sizing-double form-group card-body">			
 						<form:label path="location">Location:</form:label>
-						<form:errors class="text-danger" path="location"/>
-						
-						<%-- <form:input class="form-control" path="location"/> --%>
-					
-						<form:select class="form-control" path="location" name="location">
+						<form:errors class="text-danger" path="location"/>			
+						<form:select class="form-sizing-single form-control" path="location" name="location">
 							<option value="unknown">Unknown</option>
 							<option value="inPerson">In Person</option>
 							<option value="hybrid">Hybrid</option>
 							<option value="remote">Remote</option>
 						</form:select>
-						
 					</div>
-					<div class="form-group card-body">
+				</div>
+				<div class="d-flex justify-content-center">			
+					<div class="form-sizing-double form-group card-body">
+						<form:label path="contactInformation">Contact Information:</form:label>
+						<form:errors class="text-danger" path="contactInformation"/>
+						<br>
+					    <form:textarea class="form-control" path = "contactInformation"/>
+					</div>
+					<div class="form-sizing-double form-group card-body">
 						<form:label path="jobDescription">Job Description:</form:label>
 						<form:errors class="text-danger" path="jobDescription"/>
 						<br>
-					    <form:textarea class="form-control" path = "jobDescription" rows = "5" cols = "30" />
+					    <form:textarea class="form-control" path = "jobDescription"/>
 					</div>
-					<div class="form-group card-body">
+				</div>
+				<div class="d-flex justify-content-center">
+					<div class="form-sizing-double form-group card-body">
 						<form:label path="notableBenefits">Notable Benefits:</form:label>
 						<form:errors class="text-danger" path="notableBenefits"/>
 						<br>
-					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
+					    <form:textarea class="form-control" path = "notableBenefits"/>
 					</div>
-					<div class="form-group card-body">
+					<div class="form-sizing-double form-group card-body">
 						<form:label path="additionalNotes">Additional Notes:</form:label>
 						<form:errors class="text-danger" path="additionalNotes"/>
 						<br>
-					    <form:textarea class="form-control" path = "contactInformation" rows = "5" cols = "30" />
+					    <form:textarea class="form-control" path = "additionalNotes"/>
 					</div>
-					<input class="form-group btn btn-warning" type="submit" value="Submit"/>
-
 				</div>
-
+				<div class="text-center m-2">
+					<input class="form-sizing-single form-group" type="submit" value="Submit"/>
+				</div>
 			</form:form>
 		</div>
 	</div>

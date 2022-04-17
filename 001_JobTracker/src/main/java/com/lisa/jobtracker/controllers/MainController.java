@@ -25,8 +25,8 @@ public class MainController {
 		 private UserService userService;
 	@Autowired
 		 private JobService jobService;
-//	@Autowired
-//		 private HttpSession session;
+	@Autowired
+		 private HttpSession session;
 		
 	
 //	.                                            .      .--.           
@@ -162,4 +162,81 @@ public class MainController {
 	  return "redirect:/pane/dashboard";
 	}
 	
+
+
+//
+// 	.-. .   . .--. .  .   .  .      .--. .   ..---.
+// (   )|   |:    : \  \ /  /      :    :|\  ||    
+// 	`-. |---||    |  \  \  /       |    || \ ||--- 
+// (   )|   |:    ;   \/ \/        :    ;|  \||    
+// 	`-' '   ' `--'     ' '          `--' '   ''---'
+
+
+	@GetMapping("/pane/detail/{id}")
+	public String showJob(@PathVariable("id") Long id, @ModelAttribute("showJob") Job job, Model model, HttpSession session) {
+	if(session.getAttribute("user_id")==null) {
+	return "redirect:/";
+	}
+	Long userId = (Long) session.getAttribute("user_id");
+	model.addAttribute("userLogin", userService.findUserById(userId));
+	model.addAttribute("showJob", jobService.findJobById(id));
+	model.addAttribute("allJobs",jobService.allJobs());
+	return "showItem.jsp";
+	
+	}
+	
+	
+//    
+//.---..--. --.--.---.      .--. .   ..---.
+//|    |   :  |    |       :    :|\  ||    
+//|--- |   |  |    |       |    || \ ||--- 
+//|    |   ;  |    |       :    ;|  \||    
+//'---''--' --'--  '        `--' '   ''---'
+//    
+	
+	@GetMapping("/pane/edit/{id}")
+	public String editForm(@PathVariable("id") Long id, @ModelAttribute("editJob") Job job, HttpSession session, Model model) {
+	  if(session.getAttribute("user_id") == null) {
+	  	return "redirect:/";
+	  }
+	  Long userId = (Long) session.getAttribute("user_id");
+	  User userLogin = userService.findUserById(userId);
+	  model.addAttribute("userLogin", userLogin);
+	  model.addAttribute("editJob", jobService.findJobById(id)); 	  
+	  return "editItem.jsp";
+	}
+	
+	@PostMapping("/pane/edit/{id}")
+	public String editJob(@PathVariable("id") Long id, @Valid @ModelAttribute("editJob") Job editJob, BindingResult result, Model model, HttpSession session, @ModelAttribute("modifier") User user) {
+	  if(session.getAttribute("user_id") == null) {
+		  	return "redirect:/";
+		  }
+	  if(result.hasErrors()) {	
+	      return "editItem.jsp";
+	  }
+		jobService.updateJob(editJob);
+		return "redirect:/pane/dashboard";
+	}
+
+	
+//    
+//.--. .---..    .---..---..---.      .--. .   ..---.
+//|   :|    |    |      |  |         :    :|\  ||    
+//|   ||--- |    |---   |  |---      |    || \ ||--- 
+//|   ;|    |    |      |  |         :    ;|  \||    
+//'--' '---''---''---'  '  '---'      `--' '   ''---'
+//
+
+	@GetMapping("/delete/job/{id}")
+	public String deleteJob(@PathVariable("id") Long id) {
+		
+		// Uses the AutoWired Session
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/pane/edit/{id}";
+	  }
+	  jobService.deleteJob(id);
+	  return "redirect:/pane/dashboard";
+	}
+
 }
+	

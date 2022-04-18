@@ -2,6 +2,7 @@ package com.lisa.jobtracker.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
     
 @Entity
 @Table(name="users")
@@ -49,16 +51,20 @@ public class User {
 
     
 //  
-//    .        .                     .                  
-//    |       _|_   o                |      o           
-//.--. .-. |  .-.   |    .   .-. .--. .--.|--.   .  .,-. .--.
-//|   (.-' | (   )  |    |  (   )|  | `--.|  |   |  |   )`--.
-//'    `--'`- `-'`- `-'-' `- `-' '  `-`--''  `--' `-|`-' `--'
-//                                             |        
-//                                             '         
+//  .--. .---..        .    .---.--.-- .--. .   . .-. .   .--.--.--.  .-. 
+//  |   )|    |       / \     |    |  :    :|\  |(   )|   |  |  |   )(   )
+//  |--' |--- |      /___\    |    |  |    || \ | `-. |---|  |  |--'  `-. 
+//  |  \ |    |     /     \   |    |  :    ;|  \|(   )|   |  |  |    (   )
+//  '   `'---''---''       `  '  --'-- `--' '   ' `-' '   '--'--'     `-' 
+                                                           
     // One User has Many jobs
     @OneToMany(mappedBy="user", fetch=FetchType.EAGER)
     private List<Job> jobs;
+    
+    //FAVORITES
+    @OneToMany(mappedBy="markingPerson", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private List<Job> favorited;
+    
     
 //    // Many users have many likes
 //    @ManyToMany(fetch=FetchType.LAZY)
@@ -70,13 +76,18 @@ public class User {
 //    private List<Job> jobLikes;
 
     
-//	
-//  .--.      .   .                      .-.        .-.       .   .               
-//  :         _|_ _|_                    (   )      (   )     _|_ _|_              
-//  | --. .-.  |   |   .-. .--..--.      .--'        `-.  .-.  |   |   .-. .--..--.
-//  :   |(.-'  |   |  (.-' |   `--.     (   `.)     (   )(.-'  |   |  (.-' |   `--.
-//   `--' `--' `-' `-' `--''   `--'      `---'`      `-'  `--' `-' `-' `--''   `--'
-//                                 
+    //
+//  .--..---..---..---..---..--.  .-.        .-.  
+//  :    |      |    |  |    |   )(   )      (   ) 
+//  | --.|---   |    |  |--- |--'  `-.       .--'  
+//  :   ||      |    |  |    |  \ (   )     (   `.)
+//   `--''---'  '    '  '---''   ` `-'       `---'`
+//   .-. .---..---..---..---..--.  .-. 
+//   (   )|      |    |  |    |   )(   )
+//    `-. |---   |    |  |--- |--'  `-. 
+//   (   )|      |    |  |    |  \ (   )
+//    `-' '---'  '    '  '---''   ` `-' 
+//                                   
 //
 	public Long getId() {
 		return id;
@@ -142,6 +153,15 @@ public class User {
 		this.jobs = jobs;
 	}
 
+	public List<Job> getFavorited() {
+		return favorited;
+	}
+
+	public void setFavorited(List<Job> favorited) {
+		this.favorited = favorited;
+	}
+
+	
     
 }
     

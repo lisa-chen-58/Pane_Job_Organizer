@@ -76,6 +76,15 @@ public class UserService {
 	public User findUserById(Long id) {
 		return userRepo.findById(id).orElse(null);
 	}
+    // retrieves a user
+    public User findUser(Long id) {
+        Optional<User> optionalUser = userRepo.findById(id);
+        if(optionalUser.isPresent()) {
+            return optionalUser.get();
+        } else {
+            return null;   
+        }
+    }
     // updates the user
     public User updateUser(User updatedUser) {
     	return userRepo.save(updatedUser);

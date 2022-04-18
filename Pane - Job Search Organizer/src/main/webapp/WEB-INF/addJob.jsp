@@ -108,7 +108,7 @@ https://getbootstrap.com/docs/4.0/components/navbar/
 		'     `--' '   `'    '             
 		 -->
 		
-			<form:form class="polaroid-sizing" action="/pane/create" method="post" modelAttribute="addJob">
+			<form:form class="polaroid-sizing blurred-box-form" action="/pane/create" method="post" modelAttribute="addJob">
 				<div class="d-flex justify-content-center">
 				     <!-- userId -->
   					<form:input type="hidden" value="${userLogin.id}" path="user"/>    
@@ -204,8 +204,8 @@ https://getbootstrap.com/docs/4.0/components/navbar/
 					    <form:textarea class="form-control" path = "additionalNotes"/>
 					</div>
 				</div>
-				<div class="text-center m-2">
-					<input class="form-sizing-single form-group" type="submit" value="Submit"/>
+				<div class="box-link-style-submit text-center m-2">
+					<input class="btn btn-link-style-submit form-sizing-single form-group" type="submit" value="Submit"/>
 				</div>
 			</form:form>
 		</div>

@@ -47,7 +47,7 @@ public class Job {
 	private String company;
 	
     @NotEmpty(message="Area of expertise is required!")
-    @Size(min=1, max=30, message="Area of Expertise must be between 1 and 100 characters")
+    @Size(min=1, max=100, message="Area of Expertise must be between 1 and 100 characters")
     private String areaOfExpertise;
 	
     @Min(value=0, message="Must be equal or greater than 0")
@@ -103,7 +103,11 @@ public class Job {
     private User user;
 
     
-    
+    //Many to One - MARK
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="markingPerson_id")
+    private User markingPerson;
+
     
     
     
@@ -255,20 +259,16 @@ public class Job {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public User getMarkingPerson() {
+		return markingPerson;
+	}
+
+	public void setMarkingPerson(User markingPerson) {
+		this.markingPerson = markingPerson;
+	}
     
-                                
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
 }

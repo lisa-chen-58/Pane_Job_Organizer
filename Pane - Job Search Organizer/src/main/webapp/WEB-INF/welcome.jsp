@@ -110,14 +110,14 @@ https://getbootstrap.com/docs/4.0/components/navbar/
 |      /___\  |--' |    ||   | `-. |--- |    
 :     /     \ |  \ :    ;:   ;(   )|    |    
  `--''       `'   ` `--'  `-'  `-' '---''---'
-
+the carousel slide class allows the movement for slides
  -->
 	<div class="container">
 	  <br>
 	  <h4>
 		<em>"If you fell down yesterday, stand up today." --H.G. Wells</em>
 	  </h4>
-	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	  <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
 	    <!-- Indicators -->
 	    <ol class="carousel-indicators">
 	      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -167,13 +167,11 @@ https://getbootstrap.com/docs/4.0/components/navbar/
 	    </div>
     </div>
 	
-	    <!-- Move Right Controls -->
-	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	      <span class="sr-only">Next</span>
-	    </a>
-	  </div>
-	</div>
-
+    <!-- Move Right Controls -->
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </body>
 </html>

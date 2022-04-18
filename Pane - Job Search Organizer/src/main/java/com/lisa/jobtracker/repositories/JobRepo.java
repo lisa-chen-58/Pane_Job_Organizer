@@ -10,6 +10,7 @@ import com.lisa.jobtracker.models.Job;
 @Repository
 public interface JobRepo extends CrudRepository<Job,Long>{
 	List<Job> findAll();
+	List<Job> findAllByOrderByNextFollowUpAsc();
 	
 //	Optional<User> findByEmail(String email);
 	

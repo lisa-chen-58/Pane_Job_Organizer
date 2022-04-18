@@ -17,16 +17,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Dashboard</title>
+<title>Show Job</title>
 
 <!-- for Bootstrap CSS -->
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 
-<!-- for Bootstrap CSS specifically for the table -->
+<!-- for Boostrap CSS specifically for the table -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
 
 <!-- YOUR own local CSS -->
-<link rel="stylesheet" href="../views/css/main.css"/>
+<link rel="stylesheet" href="/../views/css/main.css"/>
 
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script type="text/javascript" src="js/app.js"></script>
@@ -36,6 +36,7 @@
 
 </head>
 <body>
+
 <!-- 
 .   .    .    .       ..--.     .    .--. 
 |\  |   / \    \     / |   )   / \   |   )
@@ -48,10 +49,10 @@ https://getbootstrap.com/docs/4.0/components/navbar/
 		<div class="p-1 blurred-box d-flex justify-content-between align-items-center">
 			
 			<p class="navbar-brand">
-				<strong>Dashboard for ${userLogin.firstName} ${userLogin.lastName}</strong>
+				<strong>Show Job Pane Details for ${userLogin.firstName} ${userLogin.lastName}</strong>
 			</p>
 			<p class="navbar-brand">
-				<em>If you get a job making stationery, you won't be going anywhere.</em>
+				<em>Inspecting mirrors is a job I could really see myself doing.</em>
 			</p>
 		</div>	 
 	 	<div class="mb-3 text-center">
@@ -63,7 +64,7 @@ https://getbootstrap.com/docs/4.0/components/navbar/
 			  <div class="collapse navbar-collapse" id="navbarNav">
 			    <ul class="navbar-nav">
 			      <li class="m-1 nav-item">
-			        <a class="nav-link disabled" href="/pane/dashboard">DASHBOARD
+			        <a class="nav-link" href="/pane/dashboard">DASHBOARD
 		        	</a>
 			      </li>
 			      <li class="m-1 nav-item">
@@ -77,73 +78,100 @@ https://getbootstrap.com/docs/4.0/components/navbar/
 			</nav>
 		</div>
 	</div>
-	
-	
-	<div class="container">
+	<div class="d-flex p-4 mx-2 content justify-content-center">
+		
+	<!--                  
+	.--. .---..---.    .    --.--.     .-. 
+	|   :|      |     / \     |  |    (   )
+	|   ||---   |    /___\    |  |     `-. 
+	|   ;|      |   /     \   |  |    (   )
+	'--' '---'  '  '       `--'--'---' `-' 
+	-->
 
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>Modify</th>
-						<th>Stage of Interview</th>
-						<th>Next Follow Up</th>
-						<th>Job Title</th>
-						<th>Company</th>
-						<th>Area of Expertise</th>
-						<th>Salary</th>
-						<th>Date Applied</th>
-						<th>Excitement Level</th>
-						<th>Location</th>
-						<th>Contact Information</th>
-						<th>Job Description</th>
-						<th>Notable Benefits</th>
-						<th>Additional Notes</th>
-						<th>Delete</th>
-					
-					</tr>	
-				</thead>
-				<tbody>
-					<!-- MAP THROUGH ALL ITERATIONS OF USERS' SAVED JOB PANES-->
-					<c:forEach var="job" items="${allJobs}">
-						<tr>
-							<c:if test="${job.user.id==userLogin.id}">			
+		<div class="content container blurred-box-form">
+		
+			<c:choose>
+				<c:when test="${showJob.user.id==userLogin.id}">
+					<!-- TABLE -->
+			
+					<table class="table table-hover">
+						<tbody>
+							<tr>
+								<th>Stage of Interview:</th>
+								<td>${showJob.stageOfInterview}</td>
+							</tr>
+							<tr>
+								<th>Next Follow Up:</th>
 								<td>
-									<a href="/pane/edit/${job.id}">Edit</a>
+									<fmt:formatDate value="${showJob.nextFollowUp}" type="date" pattern="MM/dd/yyyy"/>
 								</td>
-								<td>${job.stageOfInterview}</td>
+							</tr>
+							<tr>
+								<th>Job Title:</th>
+								<td>${showJob.jobTitle}</td>
+							</tr>
+							<tr>
+								<th>Company:</th>
+								<td>${showJob.company}</td>
+							</tr>
+							<tr>
+								<th>Salary:</th>
 								<td>
-									<fmt:formatDate value="${job.nextFollowUp}" type="date" pattern="MM/dd/yyyy"/>
+									<fmt:formatNumber value = "${showJob.salary}" type = "currency"/>
 								</td>
+							</tr>
+							<tr>
+								<th>Date Applied:</th>
 								<td>
-									<a href="/pane/detail/${job.id}">
-										${job.jobTitle}
-									</a>
+									<fmt:formatDate value="${showJob.dateApplied}" type="date" pattern="MM/dd/yyyy"/>
 								</td>
-								<td>${job.company}</td>
-								<td>${job.areaOfExpertise}</td>
-								<td>
-									<fmt:formatNumber value = "${job.salary}" type = "currency"/>
-								</td>
-								<td>
-									<fmt:formatDate value="${job.dateApplied}" type="date" pattern="MM/dd/yyyy"/>
-								</td>
-								<td>${job.excitementLevel}</td>
-								<td>${job.location}</td>
-								<td>${job.contactInformation}</td>
-								<td>${job.jobDescription }</td>
-								<td>${job.notableBenefits}</td>
-								<td>${job.additionalNotes}</td>
-								<td>
-									<a href="/pane/delete/${job.id}">Delete</a>
-								</td>
-							</c:if>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-	
+							</tr>				
+							<tr>
+								<th>Excitement Level:</th>
+								<td>${showJob.excitementLevel}</td>
+							</tr>				
+							<tr>
+								<th>Location:</th>
+								<td>${showJob.location}</td>
+							</tr>				
+							<tr>
+								<th>Contact Information:</th>
+								<td>${showJob.contactInformation}</td>
+							</tr>				
+							<tr>
+								<th>Job Description:</th>
+								<td>${showJob.jobDescription}</td>
+							</tr>				
+							<tr>
+								<th>Notable Benefits:</th>
+								<td>${showJob.notableBenefits}</td>
+							</tr>				
+							<tr>
+								<th>Additional Notes:</th>
+								<td>${showJob.additionalNotes}</td>
+							</tr>
+						</tbody>
+					</table>
+				</c:when>
+				<c:otherwise>
+					<h3>You are not authorized to view this page</h3>
+				</c:otherwise>
+			</c:choose>
+		</div>
+		<div class="d-flex justify-content-center align-items-center polaroid-side-display">
+			<div class="content text-center ">
+				<img 
+				src="/../views/img/2011-ireland-modern2.jpg" 
+				alt="ireland-modern2"
+				class="polaroid-sizing-big"
+				/>
+				<div class="container">
+					<p>Ireland 2011 - L.Chen</p>
+				</div>
+			</div>
+		</div>
 	</div>
-
+	
 <!-- 
 .---.--.--.   ..---..--.      .   ..---.    .    .--. .---..--. 
 |      |   \ / |    |   :     |   ||       / \   |   :|    |   )
@@ -151,7 +179,6 @@ https://getbootstrap.com/docs/4.0/components/navbar/
 |      |   / \ |    |   ;     |   ||     /     \ |   ;|    |  \ 
 '    --'--'   ''---''--'      '   ''---''       `'--' '---''   `
  -->
- 
 	<script>
 		window.onscroll = function() {myFunction()};
 		

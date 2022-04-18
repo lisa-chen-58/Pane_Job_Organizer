@@ -42,7 +42,7 @@
  -->
 
 	<nav class="m-1 navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-	  <strong class="navbar-brand" href="/pane/welcome">PANE</strong>
+	  <strong class="navbar-brand">PANE</strong>
 	  <em class="m-2">A job search can be the window to a new opportunity... or a pane to replace.</em>
 	</nav>
 
@@ -86,7 +86,7 @@
 			<div class="content d-flex text-center justify-content-center">
 	
 				<div class="p-4 mx-5 blurred-box">
-					<h1>Register</h1>
+					<h1 class="header-pane"><strong>Register</strong></h1>
 					<form:form action="/register" method="post" modelAttribute="newUser">
 		
 						<div class="form-group card-body">
@@ -120,12 +120,13 @@
 							<form:errors class="text-danger" path="confirm"/>
 							<form:input type="password" class="form-control" path="confirm"/>
 						</div>
-						<input class="link-style-submit" type="submit" value="Submit"/>
-					
+						<div class="box-link-style-submit align-middle text-center">					
+							<input class="btn btn-link-style-submit" type="submit" value="Submit"/>
+						</div>
 					</form:form>
 				</div>
 				<div class="p-4 mx-5 blurred-box">
-					<h1>Login</h1>
+					<h1 class="header-pane"><strong>Login</strong></h1>
 					<form:form action="/login" method="post" modelAttribute="newLogin">
 		
 						<div class="form-group card-body">
@@ -138,7 +139,9 @@
 							<form:errors class="text-danger" path="password"/>
 							<form:input type="password" class="form-control" path="password"/>
 						</div>
-						<input class="link-style-submit" type="submit" value="Submit"/>
+						<div class="box-link-style-submit align-middle text-center">					
+							<input class="btn btn-link-style-submit" type="submit" value="Submit"/>
+						</div>
 					
 					</form:form>
 				</div>

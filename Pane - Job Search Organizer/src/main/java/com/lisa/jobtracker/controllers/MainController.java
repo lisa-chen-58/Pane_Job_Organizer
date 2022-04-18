@@ -129,6 +129,8 @@ public class MainController {
     	User userLogin=userService.findUserById(userId);
     	model.addAttribute("userLogin",userLogin);
     	model.addAttribute("allJobs", jobService.allJobs());	
+    	model.addAttribute("sortNextFollowUp", jobService.findAllByOrderByNextFollowUpAsc());	
+    	System.out.println(jobService.findAllByOrderByNextFollowUpAsc());
     	return "dashboard.jsp";
     	}
     
@@ -212,7 +214,15 @@ public class MainController {
 	  if(result.hasErrors()) {	
 	      return "editJob.jsp";
 	  }
+
+		Long userId = (Long) session.getAttribute("user_id");
+		User userLogin = userService.findUserById(userId);
+		
+//		Set the person marking it as a favorite
+		editJob.setMarkingPerson(userLogin);
+		
 		jobService.updateJob(editJob);
+		
 		return "redirect:/pane/dashboard";
 	}
 
@@ -235,6 +245,43 @@ public class MainController {
 	  jobService.deleteJob(id);
 	  return "redirect:/pane/dashboard";
 	}
+	
+//    
+//.---.    .    .       . .--. .--. --.--.---..---. .-. 
+//|       / \    \     / :    :|   )  |    |  |    (   )
+//|---   /___\    \   /  |    ||--'   |    |  |---  `-. 
+//|     /     \    \ /   :    ;|  \   |    |  |    (   )
+//'    '       `    '     `--' '   `--'--  '  '---' `-' 
+//
+	
+	@GetMapping("/mark/{id}")
+	public String mark(@PathVariable("id") Long id, HttpSession session) {
+		Long userId = (Long) session.getAttribute("user_id");
+		User markingPerson = userService.findUser(userId);
+		Job markJob = jobService.findJob(id);
+		
+		jobService.marking(markingPerson, markJob);
+		
+		return "redirect:/pane/dashboard";
+	}
+	
+
+	@GetMapping("/unmark/{id}")
+	public String unmark(@PathVariable("id") Long id, HttpSession session) {
+		Long userId = (Long) session.getAttribute("user_id");
+		User markingPerson = userService.findUser(userId);
+		Job unmarkJob = jobService.findJob(id);
+		
+		jobService.unMarking(markingPerson, unmarkJob);
+		
+		return "redirect:/pane/dashboard";
+	}
+	
+	
+	
+	
+	
+	
 
 }
 	

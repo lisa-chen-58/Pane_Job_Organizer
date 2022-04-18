@@ -31,33 +31,82 @@
 </head>
 <body>
 	<div>
-		<div class="text-center top-container header" id="myHeader">
-			<h1>Pane</h1>
-			<h5>Add Job Pane for ${userLogin.firstName}</h5>
-			<p>
-				<a href="/pane/dashboard">Dashboard</a> | 
-				<a href="/">Sign Out</a>
+	
+	<!-- 
+.   .    .    .       ..--.     .    .--. 
+|\  |   / \    \     / |   )   / \   |   )
+| \ |  /___\    \   /  |--:   /___\  |--' 
+|  \| /     \    \ /   |   ) /     \ |  \ 
+'   ''       `    '    '--' '       `'   `
+https://getbootstrap.com/docs/4.0/components/navbar/
+ -->
+ 	<div class="blurred-box text-center " id="myHeader">
+		<div class="p-1 blurred-box d-flex justify-content-between align-items-center">
+			
+			<p class="navbar-brand">
+				<strong>Add Job Pane for ${userLogin.firstName}</strong>
 			</p>
+			<p class="navbar-brand">
+				<em>I focused on being a photographer, but nothing ever developed.</em>
+			</p>
+		</div>	 
+	 	<div class="mb-3 text-center">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			  <a class="navbar-brand" href="/pane/welcome">PANE</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+			      <li class="m-1 nav-item">
+			        <a class="nav-link" href="/pane/dashboard">DASHBOARD
+		        	</a>
+			      </li>
+			      <li class="m-1 nav-item">
+			        <a class="nav-link disabled" href="/pane/addjob">ADD JOB PANE</a>
+			      </li>
+			      <li class="m-1 nav-item">
+			        <a class="nav-link" href="/">SIGN OUT</a>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
 		</div>
+	</div>
+	
+	
 
 		<div class="d-flex p-4 mx-2 content justify-content-center">
 
-		<!-- PHOTO -->
+		<!-- 
+		.--. .   . .--. .---. .--. 
+		|   )|   |:    :  |  :    :
+		|--' |---||    |  |  |    |
+		|    |   |:    ;  |  :    ;
+		'    '   ' `--'   '   `--' 
+		                        
+		 -->
 		
 			<div class="d-flex justify-content-center align-items-center polaroid-side-display">
-				<div class="content text-center ">
+				<div class="text-center ">
 					<img 
-						src="../views/img/2011-austria-stained-glass.jpg" 
-						alt="ireland-cathedral"			
+						src="../views/img/2011-austria-tunnel-of-windows.jpg" 
+						alt="austria-tunnel-of-windows"			
 						class="polaroid-sizing"
 					/>
 					<div class="container">
-						<p>Ireland 2011 - L.Chen</p>
+						<p>Austria 2011 - L.Chen</p>
 					</div>
 				</div>
 			</div>
 		
-		<!-- FORM -->
+		<!--     
+		.---. .--. .--. .    .
+		|    :    :|   )|\  /|
+		|--- |    ||--' | \/ |
+		|    :    ;|  \ |    |
+		'     `--' '   `'    '             
+		 -->
 		
 			<form:form class="polaroid-sizing" action="/pane/create" method="post" modelAttribute="addJob">
 				<div class="d-flex justify-content-center">
@@ -162,7 +211,16 @@
 		</div>
 
 	</div>
-	<!-- Script for cool header! -->
+
+<!-- 
+.---.--.--.   ..---..--.      .   ..---.    .    .--. .---..--. 
+|      |   \ / |    |   :     |   ||       / \   |   :|    |   )
+|---   |    /  |--- |   |     |---||---   /___\  |   ||--- |--' 
+|      |   / \ |    |   ;     |   ||     /     \ |   ;|    |  \ 
+'    --'--'   ''---''--'      '   ''---''       `'--' '---''   `
+ -->
+
+
 	<script>
 		window.onscroll = function() {myFunction()};
 		

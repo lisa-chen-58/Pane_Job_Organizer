@@ -33,12 +33,30 @@
 </head>
 <body>
 
-	<div class="top-container header text-center" id="myHeader">
-		<h1>Pane</h1>
-		<hr>
-		<h5>A job search can be the window to a new opportunity... or a pain</h5>
-	</div>
-			<!-- Script for cool header! -->
+<!-- 
+.   .    .    .       ..--.     .    .--. 
+|\  |   / \    \     / |   )   / \   |   )
+| \ |  /___\    \   /  |--:   /___\  |--' 
+|  \| /     \    \ /   |   ) /     \ |  \ 
+'   ''       `    '    '--' '       `'   `
+ -->
+
+	<nav class="m-1 navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+	  <strong class="navbar-brand" href="/pane/welcome">PANE</strong>
+	  <em class="m-2">A job search can be the window to a new opportunity... or a pane to replace.</em>
+	</nav>
+
+
+<!-- 
+.---.--.--.   ..---..--.      .   ..---.    .    .--. .---..--. 
+|      |   \ / |    |   :     |   ||       / \   |   :|    |   )
+|---   |    /  |--- |   |     |---||---   /___\  |   ||--- |--' 
+|      |   / \ |    |   ;     |   ||     /     \ |   ;|    |  \ 
+'    --'--'   ''---''--'      '   ''---''       `'--' '---''   `
+ -->
+ 
+
+
 		<script>
 			window.onscroll = function() {myFunction()};
 			
@@ -53,6 +71,16 @@
 			  }
 			}
 		</script>
+		
+<!-- 
+.     .--.  .--.       .-.       .--. .---. .--.
+|    :    ::          (   )      |   )|    :    
+|    |    || --.      .--'       |--' |--- | --.
+|    :    ;:   |     (   `.)     |  \ |    :   |
+'---' `--'  `--'      `---'`     '   `'---' `--'
+                                                
+ -->
+
 		<div class="yt-5 pt-5">
 		
 			<div class="content d-flex text-center justify-content-center">
@@ -92,7 +120,7 @@
 							<form:errors class="text-danger" path="confirm"/>
 							<form:input type="password" class="form-control" path="confirm"/>
 						</div>
-						<input type="submit" value="Submit"/>
+						<input class="link-style-submit" type="submit" value="Submit"/>
 					
 					</form:form>
 				</div>
@@ -110,7 +138,7 @@
 							<form:errors class="text-danger" path="password"/>
 							<form:input type="password" class="form-control" path="password"/>
 						</div>
-						<input type="submit" value="Submit"/>
+						<input class="link-style-submit" type="submit" value="Submit"/>
 					
 					</form:form>
 				</div>

@@ -22,7 +22,7 @@
 <!-- for Bootstrap CSS -->
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 
-<!-- for Boostrap CSS specifically for the table -->
+<!-- for Bootstrap CSS specifically for the table -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
 
 <!-- YOUR own local CSS -->
@@ -36,22 +36,55 @@
 
 </head>
 <body>
-	<div class="text-center top-container header" id="myHeader">
-		<h1>Pane</h1>
-		<h5>Dashboard for ${userLogin.firstName}</h5>
-		<p>
-			<a href="/pane/welcome">Welcome Page</a> |  
-			<a href="/pane/addjob">Add Job Opportunity</a> |  
-			<a href="/">Sign Out</a>
-		</p>
+<!-- 
+.   .    .    .       ..--.     .    .--. 
+|\  |   / \    \     / |   )   / \   |   )
+| \ |  /___\    \   /  |--:   /___\  |--' 
+|  \| /     \    \ /   |   ) /     \ |  \ 
+'   ''       `    '    '--' '       `'   `
+https://getbootstrap.com/docs/4.0/components/navbar/
+ -->
+ 	<div class="blurred-box text-center " id="myHeader">
+		<div class="p-1 blurred-box d-flex justify-content-between align-items-center">
+			
+			<p class="navbar-brand">
+				<strong>Dashboard for ${userLogin.firstName} ${userLogin.lastName}</strong>
+			</p>
+			<p class="navbar-brand">
+				<em>If you get a job making stationery, you won't be going anywhere.</em>
+			</p>
+		</div>	 
+	 	<div class="mb-3 text-center">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			  <a class="navbar-brand" href="/pane/welcome">PANE</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+			      <li class="m-1 nav-item">
+			        <a class="nav-link disabled" href="/pane/dashboard">DASHBOARD
+		        	</a>
+			      </li>
+			      <li class="m-1 nav-item">
+			        <a class="nav-link" href="/pane/addjob">ADD JOB PANE</a>
+			      </li>
+			      <li class="m-1 nav-item">
+			        <a class="nav-link" href="/">SIGN OUT</a>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+		</div>
 	</div>
-	<hr>
+	
+	
 	<div class="container">
 
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Adjustments</th>
+						<th>Modify</th>
 						<th>Stage of Interview</th>
 						<th>Next Follow Up</th>
 						<th>Job Title</th>
@@ -65,6 +98,7 @@
 						<th>Job Description</th>
 						<th>Notable Benefits</th>
 						<th>Additional Notes</th>
+						<th>Delete</th>
 					
 					</tr>	
 				</thead>
@@ -75,10 +109,11 @@
 							<c:if test="${job.user.id==userLogin.id}">			
 								<td>
 									<a href="/pane/edit/${job.id}">Edit</a>
-									<a href="/pane/delete/${job.id}">Delete</a>
 								</td>
 								<td>${job.stageOfInterview}</td>
-								<td>${job.nextFollowUp}</td>
+								<td>
+									<fmt:formatDate value="${job.nextFollowUp}" type="date" pattern="MM/dd/yyyy"/>
+								</td>
 								<td>
 									<a href="/pane/detail/${job.id}">
 										${job.jobTitle}
@@ -86,14 +121,21 @@
 								</td>
 								<td>${job.company}</td>
 								<td>${job.areaOfExpertise}</td>
-								<td>${job.salary}</td>
-								<td>${job.dateApplied}</td>
+								<td>
+									<fmt:formatNumber value = "${job.salary}" type = "currency"/>
+								</td>
+								<td>
+									<fmt:formatDate value="${job.dateApplied}" type="date" pattern="MM/dd/yyyy"/>
+								</td>
 								<td>${job.excitementLevel}</td>
 								<td>${job.location}</td>
 								<td>${job.contactInformation}</td>
 								<td>${job.jobDescription }</td>
 								<td>${job.notableBenefits}</td>
 								<td>${job.additionalNotes}</td>
+								<td>
+									<a href="/pane/delete/${job.id}">Delete</a>
+								</td>
 							</c:if>
 						</tr>
 					</c:forEach>
@@ -102,8 +144,14 @@
 	
 	</div>
 
-	
-	<!-- Script for cool header! -->
+<!-- 
+.---.--.--.   ..---..--.      .   ..---.    .    .--. .---..--. 
+|      |   \ / |    |   :     |   ||       / \   |   :|    |   )
+|---   |    /  |--- |   |     |---||---   /___\  |   ||--- |--' 
+|      |   / \ |    |   ;     |   ||     /     \ |   ;|    |  \ 
+'    --'--'   ''---''--'      '   ''---''       `'--' '---''   `
+ -->
+ 
 	<script>
 		window.onscroll = function() {myFunction()};
 		
@@ -119,29 +167,5 @@
 		}
 	</script>
 	
-	<div class="d-flex justify-content-center align-items-center">
-			
-			<div class="content text-center polaroid">
-				<img 
-					src="../views/img/2011-austria-tunnel-of-windows.jpg" 
-					alt="austria-tunnel-of-windows"			
-					class="polaroid-sizing"			
-	
-				/>
-				<div class="container">
-					<p>Austria 2011 - LC</p>
-				</div>
-			</div>
-			<div class="content text-center polaroid">
-				<img 
-					src="../views/img/2011-ireland-modern2.jpg" 
-					alt="ireland-modern2"
-					class="polaroid-sizing"			
-				/>
-				<div class="container">
-					<p>Ireland 2011 - LC</p>
-				</div>
-			</div>
-		</div>
 </body>
 </html>

@@ -35,20 +35,58 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="text-center top-container header" id="myHeader">
-		<h1>Pane</h1>
-		<h4>"If you fell down yesterday, stand up today." --H.G. Wells</h4>
-		<p>
-			<a href="/pane/dashboard">Dashboard</a> | 
-			<a href="/pane/addjob">Add Job Opportunity</a> | 
-			<a href="/">Sign Out</a>
-		</p>			
-		<h3>Welcome ${userLogin.firstName} ${userLogin.lastName}</h3>
+
+<!-- 
+.   .    .    .       ..--.     .    .--. 
+|\  |   / \    \     / |   )   / \   |   )
+| \ |  /___\    \   /  |--:   /___\  |--' 
+|  \| /     \    \ /   |   ) /     \ |  \ 
+'   ''       `    '    '--' '       `'   `
+https://getbootstrap.com/docs/4.0/components/navbar/
+ -->
+ 	<div class="blurred-box text-center " id="myHeader">
+		<div class="p-1 blurred-box d-flex justify-content-between align-items-center">
+			
+			<p class="navbar-brand">
+				<strong>Welcome ${userLogin.firstName}</strong>
+			</p>
+			<p class="navbar-brand">
+				<em>What kind of windows does 2 Chainz own? TWO PANES!</em>
+			</p>
+		</div>	 
+	 	<div class="mb-3 text-center">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			  <a class="navbar-brand" href="/pane/welcome">PANE</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+			      <li class="m-1 nav-item">
+			        <a class="nav-link" href="/pane/dashboard">DASHBOARD
+		        	</a>
+			      </li>
+			      <li class="m-1 nav-item">
+			        <a class="nav-link" href="/pane/addjob">ADD JOB PANE</a>
+			      </li>
+			      <li class="m-1 nav-item">
+			        <a class="nav-link" href="/">SIGN OUT</a>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+		</div>
 	</div>
 	
-	<hr>
 	
-	<!-- Script for cool header! -->
+	
+<!-- 
+.---.--.--.   ..---..--.      .   ..---.    .    .--. .---..--. 
+|      |   \ / |    |   :     |   ||       / \   |   :|    |   )
+|---   |    /  |--- |   |     |---||---   /___\  |   ||--- |--' 
+|      |   / \ |    |   ;     |   ||     /     \ |   ;|    |  \ 
+'    --'--'   ''---''--'      '   ''---''       `'--' '---''   `
+ -->
 	<script>
 		window.onscroll = function() {myFunction()};
 		
@@ -64,9 +102,7 @@
 		}
 	</script>
 	
-	
-	
-	
+
 	
 	<!--  
  .--.    .    .--.  .--. .   . .-. .---..    
@@ -78,6 +114,9 @@
  -->
 	<div class="container">
 	  <br>
+	  <h4>
+		<em>"If you fell down yesterday, stand up today." --H.G. Wells</em>
+	  </h4>
 	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	    <!-- Indicators -->
 	    <ol class="carousel-indicators">
@@ -109,7 +148,7 @@
 	        <img src="../views/img/2011-st-andrews.jpg" alt="st-andrews" width="460" height="345">
 	        <div class="carousel-caption">
 	          <h3>St. Andrews, Scotland 2011 - L.Chen</h3>
-          	</div>
+	         	</div>
 	      </div>
 	    
 	      <div class="item">
@@ -124,14 +163,11 @@
 	        <div class="carousel-caption">
 	          <h3>Ireland 2011 - L. Chen</h3>
 	        </div>
-	      </div>
+	      </div>	    
 	    </div>
+    </div>
 	
-	    <!-- Left and right controls -->
-	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	      <span class="sr-only">Previous</span>
-	    </a>
+	    <!-- Move Right Controls -->
 	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
 	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 	      <span class="sr-only">Next</span>

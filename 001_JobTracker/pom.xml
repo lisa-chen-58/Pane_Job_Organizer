@@ -48,6 +48,18 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
+        
+            <!--https://search.maven.org/remotecontent?filepath=javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar-->
+	    <dependency>
+	        <groupId>javax.servlet</groupId>
+	        <artifactId>javax.servlet-api</artifactId>
+	    </dependency>
+	    
+	    <!--https://search.maven.org/remotecontent?filepath=javax/servlet/jstl/1.2/jstl-1.2.jar-->
+	    <dependency>
+	        <groupId>javax.servlet</groupId>
+	        <artifactId>jstl</artifactId>
+	    </dependency>
         <!-- DEPENDENCIES FOR INTEGRATING SQL DATABASE AND USING JPA -->
         <!-- Note: Project will not run until a schema has been created and the 
             proper settings in application properties are present for 

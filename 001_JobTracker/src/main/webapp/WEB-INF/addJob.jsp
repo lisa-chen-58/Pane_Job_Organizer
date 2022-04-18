@@ -39,8 +39,27 @@
 				<a href="/">Sign Out</a>
 			</p>
 		</div>
-		<div class="p-4 mx-5 content">
-			<form:form action="/pane/create" method="post" modelAttribute="addJob">
+
+		<div class="d-flex p-4 mx-2 content justify-content-center">
+
+		<!-- PHOTO -->
+		
+			<div class="d-flex justify-content-center align-items-center polaroid-side-display">
+				<div class="content text-center ">
+					<img 
+						src="../views/img/2011-austria-stained-glass.jpg" 
+						alt="ireland-cathedral"			
+						class="polaroid-sizing"
+					/>
+					<div class="container">
+						<p>Ireland 2011 - L.Chen</p>
+					</div>
+				</div>
+			</div>
+		
+		<!-- FORM -->
+		
+			<form:form class="polaroid-sizing" action="/pane/create" method="post" modelAttribute="addJob">
 				<div class="d-flex justify-content-center">
 				     <!-- userId -->
   					<form:input type="hidden" value="${userLogin.id}" path="user"/>    
@@ -50,7 +69,7 @@
 						<form:input class="form-control" path="stageOfInterview"/>
 					</div>
 					<div class="form-sizing-double form-group card-body">
-						<form:label path="nextFollowUp">Next Follow Up:</form:label>
+						<form:label path="nextFollowUp">Next Follow Up (Optional):</form:label>
 						<form:errors class="text-danger" path="nextFollowUp"/>
 						<form:input type="date" class="form-control" path="nextFollowUp"/>
 					</div>
@@ -74,20 +93,20 @@
 						<form:input class="form-control" path="areaOfExpertise"/>
 					</div>
 					<div class="form-sizing-double form-group card-body">
-						<form:label path="salary">Salary:</form:label>
+						<form:label path="salary">Salary (Optional):</form:label>
 						<form:errors class="text-danger" path="salary"/>
-						<form:input type="float" class="form-control" path="salary"/>
+						<form:input type="number" class="form-control" path="salary"/>
 					</div>
 				</div>
 				<div class="d-flex justify-content-center">
 					<div class="form-sizing-double form-group card-body">
-						<form:label path="dateApplied">Date Applied:</form:label>
+						<form:label path="dateApplied">Date Applied (Optional):</form:label>
 						<form:errors class="text-danger" path="dateApplied"/>
 						<form:input type="date" class="form-control" path="dateApplied"/>
 					</div>	
 					<div class="form-sizing-double form-group card-body">			
 						<form:label path="excitementLevel">Excitement Level:</form:label>
-						<form:errors class="text-danger" path="location"/>			
+						<form:errors class="text-danger" path="excitementLevel"/>			
 						<form:select class="form-control" path="excitementLevel" name="excitementLevel">
 							<option value="0 - No Opinion">0 - No Opinion</option>
 							<option value="1 - Not Excited">1 - Not Excited</option>
@@ -116,7 +135,7 @@
 					    <form:textarea class="form-control" path = "contactInformation"/>
 					</div>
 					<div class="form-sizing-double form-group card-body">
-						<form:label path="jobDescription">Job Description:</form:label>
+						<form:label path="jobDescription">Job Description (Optional):</form:label>
 						<form:errors class="text-danger" path="jobDescription"/>
 						<br>
 					    <form:textarea class="form-control" path = "jobDescription"/>
@@ -124,13 +143,13 @@
 				</div>
 				<div class="d-flex justify-content-center">
 					<div class="form-sizing-double form-group card-body">
-						<form:label path="notableBenefits">Notable Benefits:</form:label>
+						<form:label path="notableBenefits">Notable Benefits (Optional):</form:label>
 						<form:errors class="text-danger" path="notableBenefits"/>
 						<br>
 					    <form:textarea class="form-control" path = "notableBenefits"/>
 					</div>
 					<div class="form-sizing-double form-group card-body">
-						<form:label path="additionalNotes">Additional Notes:</form:label>
+						<form:label path="additionalNotes">Additional Notes (Optional):</form:label>
 						<form:errors class="text-danger" path="additionalNotes"/>
 						<br>
 					    <form:textarea class="form-control" path = "additionalNotes"/>
@@ -141,6 +160,7 @@
 				</div>
 			</form:form>
 		</div>
+
 	</div>
 	<!-- Script for cool header! -->
 	<script>

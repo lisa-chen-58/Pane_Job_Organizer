@@ -118,5 +118,30 @@
 		  }
 		}
 	</script>
+	
+	<div class="d-flex justify-content-center align-items-center">
+			
+			<div class="content text-center polaroid">
+				<img 
+					src="../views/img/2011-austria-tunnel-of-windows.jpg" 
+					alt="austria-tunnel-of-windows"			
+					class="polaroid-sizing"			
+	
+				/>
+				<div class="container">
+					<p>Austria 2011 - LC</p>
+				</div>
+			</div>
+			<div class="content text-center polaroid">
+				<img 
+					src="../views/img/2011-ireland-modern2.jpg" 
+					alt="ireland-modern2"
+					class="polaroid-sizing"			
+				/>
+				<div class="container">
+					<p>Ireland 2011 - LC</p>
+				</div>
+			</div>
+		</div>
 </body>
 </html>

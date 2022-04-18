@@ -176,13 +176,13 @@ public class MainController {
 	return "redirect:/";
 	}
 	Long userId = (Long) session.getAttribute("user_id");
-	model.addAttribute("userLogin", userService.findUserById(userId));
+	User userLogin=userService.findUserById(userId);
+	model.addAttribute("userLogin", userLogin);
 	model.addAttribute("showJob", jobService.findJobById(id));
 	model.addAttribute("allJobs",jobService.allJobs());
-	return "showItem.jsp";
+	return "showJob.jsp";
 	
 	}
-	
 	
 //    
 //.---..--. --.--.---.      .--. .   ..---.

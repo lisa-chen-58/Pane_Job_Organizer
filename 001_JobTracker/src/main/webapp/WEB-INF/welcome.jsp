@@ -37,7 +37,7 @@
 <body>
 	<div class="text-center top-container header" id="myHeader">
 		<h1>Pane</h1>
-		<h5>"If you fell down yesterday, stand up today." --H.G. Wells</h5>
+		<h4>"If you fell down yesterday, stand up today." --H.G. Wells</h4>
 		<p>
 			<a href="/pane/dashboard">Dashboard</a> | 
 			<a href="/pane/addjob">Add Job Opportunity</a> | 
@@ -47,6 +47,25 @@
 	</div>
 	
 	<hr>
+	
+	<!-- Script for cool header! -->
+	<script>
+		window.onscroll = function() {myFunction()};
+		
+		var header = document.getElementById("myHeader");
+		var sticky = header.offsetTop;
+		
+		function myFunction() {
+		  if (window.pageYOffset > sticky) {
+		    header.classList.add("sticky");
+		  } else {
+		    header.classList.remove("sticky");
+		  }
+		}
+	</script>
+	
+	
+	
 	
 	
 	<!--  
@@ -66,41 +85,46 @@
 	      <li data-target="#myCarousel" data-slide-to="1"></li>
 	      <li data-target="#myCarousel" data-slide-to="2"></li>
 	      <li data-target="#myCarousel" data-slide-to="3"></li>
+	      <li data-target="#myCarousel" data-slide-to="4"></li>
 	    </ol>
 	
 	    <!-- Wrapper for slides -->
 	    <div class="carousel-inner" role="listbox">
 	
 	      <div class="item active">
-	        <img src="../views/img/2011-austria-tunnel-of-windows.jpg" alt="austria-tunnel-of-windows" width="460" height="345">
+	        <img src="../views/img/2011-scotland-blair-castle.jpg" alt="ireland-cathedral" width="460" height="345">
 	        <div class="carousel-caption">
-	          <h3>Austria 2011</h3>
+	          <h3>Blair Castle, Ireland 2011 - L.Chen</h3>
+	        </div>
+	      </div>
+	      
+	      <div class="item">
+	        <img src="../views/img/2011-austria-pastel.jpg" alt="austria-pastel" width="460" height="345">
+	        <div class="carousel-caption">
+	          <h3>Austria 2011 - L.Chen</h3>
 	        </div>
 	      </div>
 	
 	      <div class="item">
-	        <img src="i../views/img/2011-st-andrews.jpg" alt="st-andrews" width="460" height="345">
+	        <img src="../views/img/2011-st-andrews.jpg" alt="st-andrews" width="460" height="345">
 	        <div class="carousel-caption">
-	          <h3>St. Andrews 2011</h3>
+	          <h3>St. Andrews, Scotland 2011 - L.Chen</h3>
           	</div>
 	      </div>
 	    
 	      <div class="item">
-	        <img src="../views/img/2011-austria-stained-glass.jpg" alt="2011-austria-stained-glass" width="460" height="345">
+	        <img src="../views/img/2011-ireland-modern1.jpg" alt="2011-austria-stained-glass" width="460" height="345">
 	        <div class="carousel-caption">
-	          <h3>Flowers</h3>
-	          <p>Beautiful flowers in Kolymbari, Crete.</p>
+	          <h3>Ireland 2011 - L.Chen</h3>
 	        </div>
 	      </div>
 	
 	      <div class="item">
-	        <img src="img_flower2.jpg" alt="Flower" width="460" height="345">
+	        <img src="../views/img/2011-ireland-cathedral.jpg" alt="ireland-cathedral" width="460" height="345">
 	        <div class="carousel-caption">
-	          <h3>Flowers</h3>
-	          <p>Beautiful flowers in Kolymbari, Crete.</p>
+	          <h3>Ireland 2011 - L. Chen</h3>
 	        </div>
 	      </div>
-	  
 	    </div>
 	
 	    <!-- Left and right controls -->
@@ -115,132 +139,5 @@
 	  </div>
 	</div>
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!-- 
-	<div class="d-flex justify-content-center align-items-center">
-		<div class="content text-center polaroid">
-			<img 
-				src="../views/img/2011-austria-windowtunnel.jpg" 
-				alt="austria-windowtunnel"			
-				class="polaroid-sizing"			
-
-			/>
-			<div class="container">
-				<p>Austria 2011 - LC</p>
-			</div>
-		</div>
-		<div class="content text-center polaroid">
-			<img 
-				src="../views/img/2011-st-andrews.jpg" 
-				alt="st-andrews"			
-				class="polaroid-sizing"			
-
-			/>
-			<div class="container">
-				<p>St. Andrews 2011 - LC</p>
-			</div>
-		</div>
-		<div class="content text-center polaroid">
-			<img 
-				src="../views/img/2011-austria-stained-glass.jpg" 
-				alt="austria-stained-glass"
-				class="polaroid-sizing"			
-			/>
-			<div class="container">
-				<p>Austria 2011 - LC</p>
-			</div>
-		</div>
-	</div>
-	<div class="d-flex justify-content-center align-items-center">
-		<div class="content text-center polaroid">
-			<img 
-				src="../views/img/2011-ireland-cathedral.jpg" 
-				alt="ireland-cathedral"			
-				class="polaroid-sizing"			
-
-			/>
-			<div class="container">
-				<p>Ireland 2011 - L.Chen</p>
-			</div>
-		</div>
-		<div class="content text-center polaroid">
-			<img 
-				src="../views/img/2011-scotland-blair-castle.jpg" 
-				alt="scotland-blair-castle"			
-				class="polaroid-sizing"			
-
-			/>
-			<div class="container">
-				<p>Blair Castle, Scotland 2011 - LC</p>
-			</div>
-		</div>
-		<div class="content text-center polaroid">
-			<img 
-				src="../views/img/2011-ireland-modern2.jpg" 
-				alt="ireland-modern2"
-				class="polaroid-sizing"			
-			/>
-			<div class="container">
-				<p>Ireland 2011 - LC</p>
-			</div>
-		</div>
-	</div>
-	<div class="d-flex justify-content-center align-items-center">
-		<div class="content text-center polaroid">
-			<img 
-				src="../views/img/2011-austria-pastel.jpg" 
-				alt="austria-pastel"
-				class="polaroid-sizing"			
-
-			/>
-			<div class="container">
-				<p>Austria 2011 - L.Chen</p>
-			</div>
-		</div>
-		<div class="content text-center polaroid">
-			<img 
-				src="../views/img/2011-ireland-modern1.jpg" 
-				alt="ireland-modern1"			
-				class="polaroid-sizing"			
-
-			/>
-			<div class="container">
-				<p>Ireland 2011 - LC</p>
-			</div>
-		</div>
-	</div>
- -->
-	
-	
-	
-	
-	
-	
-	<!-- Script for cool header! -->
-	<script>
-		window.onscroll = function() {myFunction()};
-		
-		var header = document.getElementById("myHeader");
-		var sticky = header.offsetTop;
-		
-		function myFunction() {
-		  if (window.pageYOffset > sticky) {
-		    header.classList.add("sticky");
-		  } else {
-		    header.classList.remove("sticky");
-		  }
-		}
-	</script>
 </body>
 </html>

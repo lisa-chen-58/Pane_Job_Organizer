@@ -28,21 +28,6 @@
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Script for cool header! -->
-<script>
-	window.onscroll = function() {myFunction()};
-	
-	var header = document.getElementById("myHeader");
-	var sticky = header.offsetTop;
-	
-	function myFunction() {
-	  if (window.pageYOffset > sticky) {
-	    header.classList.add("sticky");
-	  } else {
-	    header.classList.remove("sticky");
-	  }
-	}
-</script>
 
 </head>
 <body>
@@ -174,6 +159,21 @@
 		</div>
 	</div>
 
+	<!-- Script for cool header! -->
+	<script>
+		window.onscroll = function() {myFunction()};
+		
+		var header = document.getElementById("myHeader");
+		var sticky = header.offsetTop;
+		
+		function myFunction() {
+		  if (window.pageYOffset > sticky) {
+		    header.classList.add("sticky");
+		  } else {
+		    header.classList.remove("sticky");
+		  }
+		}
+	</script>
 
 </body>
 </html>

@@ -95,12 +95,15 @@ https://1stwebdesigner.com/15-css-background-effects/
   |  | \/ |  /___\  | --.|---  `-. 
   |  |    | /     \ :   ||    (   )
 --'--'    ''       ` `--''---' `-' 
+https://www.w3schools.com/css/css3_images.asp
+
 */
 
-/* div.polaroid {
-  width: 80%;
+div.polaroid {
+  width: 30%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
 }
 
 div.container {
@@ -108,11 +111,31 @@ div.container {
   padding: 10px 20px;
 }
 
+.polaroid-sizing{
+	width: 50%;
+}
+
 .bottomright {
   position: absolute;
   bottom: 8px;
-  right: 16px;
+  color: white;
   font-size: 18px;
 }
- 
-  */
+
+
+/* 
+ .--.    .    .--.  .--. .   . .-. .---..    
+:       / \   |   ):    :|   |(   )|    |    
+|      /___\  |--' |    ||   | `-. |--- |    
+:     /     \ |  \ :    ;:   ;(   )|    |    
+ `--''       `'   ` `--'  `-'  `-' '---''---'
+
+###### W3 Schools Boostrap Carousel####
+	https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&stacked=h
+ */
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 50%;
+    margin: auto;
+}

@@ -10,7 +10,7 @@
 <!-- for rendering errors on PUT routes -->
 <%@ page isErrorPage="true"  %>
     
-<!-- Formatting (dates) --> 
+<!-- Formatting (dates) -->
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
@@ -45,7 +45,6 @@
 			<a href="/">Sign Out</a>
 		</p>
 	</div>
-	<h1 class="text-center content">Insert Card thing</h1>	
 	<hr>
 	<div class="container">
 
